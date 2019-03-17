@@ -4,40 +4,59 @@
 #
 Name     : R-seriation
 Version  : 1.2.3
-Release  : 14
+Release  : 15
 URL      : https://cran.r-project.org/src/contrib/seriation_1.2-3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/seriation_1.2-3.tar.gz
 Summary  : Infrastructure for Ordering Objects Using Seriation
 Group    : Development/Tools
 License  : GPL-3.0
-Requires: R-seriation-lib
+Requires: R-seriation-lib = %{version}-%{release}
 Requires: R-TSP
+Requires: R-caTools
 Requires: R-colorspace
 Requires: R-dendextend
 Requires: R-fpc
 Requires: R-gclus
+Requires: R-gdata
 Requires: R-ggplot2
 Requires: R-gplots
+Requires: R-gtable
+Requires: R-gtools
+Requires: R-lazyeval
+Requires: R-munsell
+Requires: R-plyr
 Requires: R-qap
 Requires: R-registry
+Requires: R-scales
+Requires: R-tibble
 Requires: R-whisker
 BuildRequires : R-TSP
+BuildRequires : R-caTools
 BuildRequires : R-colorspace
 BuildRequires : R-dendextend
 BuildRequires : R-fpc
 BuildRequires : R-gclus
+BuildRequires : R-gdata
 BuildRequires : R-ggplot2
 BuildRequires : R-gplots
+BuildRequires : R-gtable
+BuildRequires : R-gtools
+BuildRequires : R-lazyeval
+BuildRequires : R-munsell
+BuildRequires : R-plyr
 BuildRequires : R-qap
 BuildRequires : R-registry
+BuildRequires : R-scales
+BuildRequires : R-tibble
 BuildRequires : R-whisker
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
-seriation/sequencing techniques to reorder matrices, dissimilarity
-    matrices, and dendrograms. Also provides (optimally) reordered heatmaps,
-    color images and clustering visualizations like dissimilarity plots, and
-    visual assessment of cluster tendency plots (VAT and iVAT).
+# seriation - Infrastructure for Ordering Objects Using Seriation - R package
+[![CRAN version](http://www.r-pkg.org/badges/version/seriation)](https://cran.r-project.org/package=seriation)
+[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/seriation)](https://cran.r-project.org/package=seriation)
+[![Travis-CI Build Status](https://travis-ci.org/mhahsler/seriation.svg?branch=master)](https://travis-ci.org/mhahsler/seriation)
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/mhahsler/seriation?branch=master&svg=true)](https://ci.appveyor.com/project/mhahsler/seriation)
 
 %package lib
 Summary: lib components for the R-seriation package.
@@ -55,11 +74,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1521292070
+export SOURCE_DATE_EPOCH=1552854910
 
 %install
+export SOURCE_DATE_EPOCH=1552854910
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1521292070
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -94,8 +113,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library seriation|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  seriation || :
 
 
 %files
@@ -135,7 +153,12 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/seriation/help/seriation.rdx
 /usr/lib64/R/library/seriation/html/00Index.html
 /usr/lib64/R/library/seriation/html/R.css
-/usr/lib64/R/library/seriation/libs/symbols.rds
+/usr/lib64/R/library/seriation/tests/testthat.R
+/usr/lib64/R/library/seriation/tests/testthat/test-DendSer_GA.R
+/usr/lib64/R/library/seriation/tests/testthat/test-criterion.R
+/usr/lib64/R/library/seriation/tests/testthat/test-dissimilarity.R
+/usr/lib64/R/library/seriation/tests/testthat/test-permuation_vector.R
+/usr/lib64/R/library/seriation/tests/testthat/test-seriate.R
 
 %files lib
 %defattr(-,root,root,-)
