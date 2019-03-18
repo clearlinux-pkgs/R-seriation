@@ -4,18 +4,21 @@
 #
 Name     : R-seriation
 Version  : 1.2.3
-Release  : 17
+Release  : 18
 URL      : https://cran.r-project.org/src/contrib/seriation_1.2-3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/seriation_1.2-3.tar.gz
 Summary  : Infrastructure for Ordering Objects Using Seriation
 Group    : Development/Tools
 License  : GPL-3.0
 Requires: R-seriation-lib = %{version}-%{release}
-Requires: R-DEoptimR
-Requires: R-diptest
-Requires: R-modeltools
-Requires: R-viridis
+Requires: R-Rcpp
+Requires: R-gridExtra
+Requires: R-pillar
+Requires: R-pkgconfig
+Requires: R-rlang
+Requires: R-viridisLite
 BuildRequires : R-DEoptimR
+BuildRequires : R-Rcpp
 BuildRequires : R-TSP
 BuildRequires : R-caTools
 BuildRequires : R-colorspace
@@ -26,17 +29,22 @@ BuildRequires : R-gclus
 BuildRequires : R-gdata
 BuildRequires : R-ggplot2
 BuildRequires : R-gplots
+BuildRequires : R-gridExtra
 BuildRequires : R-gtable
 BuildRequires : R-gtools
 BuildRequires : R-lazyeval
 BuildRequires : R-modeltools
 BuildRequires : R-munsell
+BuildRequires : R-pillar
+BuildRequires : R-pkgconfig
 BuildRequires : R-plyr
 BuildRequires : R-qap
 BuildRequires : R-registry
+BuildRequires : R-rlang
 BuildRequires : R-scales
 BuildRequires : R-tibble
 BuildRequires : R-viridis
+BuildRequires : R-viridisLite
 BuildRequires : R-whisker
 BuildRequires : buildreq-R
 
@@ -63,10 +71,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552895717
+export SOURCE_DATE_EPOCH=1552944306
 
 %install
-export SOURCE_DATE_EPOCH=1552895717
+export SOURCE_DATE_EPOCH=1552944306
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "

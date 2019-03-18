@@ -1,5 +1,6 @@
 1.2.3
 R-DEoptimR
+R-Rcpp
 R-TSP
 R-caTools
 R-colorspace
@@ -10,15 +11,20 @@ R-gclus
 R-gdata
 R-ggplot2
 R-gplots
+R-gridExtra
 R-gtable
 R-gtools
 R-lazyeval
 R-modeltools
 R-munsell
+R-pillar
+R-pkgconfig
 R-plyr
 R-qap
 R-registry
+R-rlang
 R-scales
 R-tibble
 R-viridis
+R-viridisLite
 R-whisker
