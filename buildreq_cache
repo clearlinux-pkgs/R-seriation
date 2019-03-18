@@ -1,8 +1,10 @@
 1.2.3
+R-DEoptimR
 R-TSP
 R-caTools
 R-colorspace
 R-dendextend
+R-diptest
 R-fpc
 R-gclus
 R-gdata
@@ -11,10 +13,12 @@ R-gplots
 R-gtable
 R-gtools
 R-lazyeval
+R-modeltools
 R-munsell
 R-plyr
 R-qap
 R-registry
 R-scales
 R-tibble
+R-viridis
 R-whisker
