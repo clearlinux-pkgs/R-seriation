@@ -6,6 +6,7 @@ R-caTools
 R-colorspace
 R-dendextend
 R-diptest
+R-foreach
 R-fpc
 R-gclus
 R-gdata
@@ -14,6 +15,7 @@ R-gplots
 R-gridExtra
 R-gtable
 R-gtools
+R-iterators
 R-lazyeval
 R-modeltools
 R-munsell

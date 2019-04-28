@@ -4,19 +4,15 @@
 #
 Name     : R-seriation
 Version  : 1.2.3
-Release  : 20
+Release  : 21
 URL      : https://cran.r-project.org/src/contrib/seriation_1.2-3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/seriation_1.2-3.tar.gz
 Summary  : Infrastructure for Ordering Objects Using Seriation
 Group    : Development/Tools
 License  : GPL-3.0
 Requires: R-seriation-lib = %{version}-%{release}
-Requires: R-Rcpp
-Requires: R-gridExtra
-Requires: R-pillar
-Requires: R-pkgconfig
-Requires: R-rlang
-Requires: R-viridisLite
+Requires: R-foreach
+Requires: R-iterators
 BuildRequires : R-DEoptimR
 BuildRequires : R-Rcpp
 BuildRequires : R-TSP
@@ -24,6 +20,7 @@ BuildRequires : R-caTools
 BuildRequires : R-colorspace
 BuildRequires : R-dendextend
 BuildRequires : R-diptest
+BuildRequires : R-foreach
 BuildRequires : R-fpc
 BuildRequires : R-gclus
 BuildRequires : R-gdata
@@ -32,6 +29,7 @@ BuildRequires : R-gplots
 BuildRequires : R-gridExtra
 BuildRequires : R-gtable
 BuildRequires : R-gtools
+BuildRequires : R-iterators
 BuildRequires : R-lazyeval
 BuildRequires : R-modeltools
 BuildRequires : R-munsell
@@ -71,10 +69,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552944306
+export SOURCE_DATE_EPOCH=1556468107
 
 %install
-export SOURCE_DATE_EPOCH=1552944306
+export SOURCE_DATE_EPOCH=1556468107
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -110,7 +108,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  seriation || :
+R CMD check --no-manual --no-examples --no-codoc seriation || :
 
 
 %files
