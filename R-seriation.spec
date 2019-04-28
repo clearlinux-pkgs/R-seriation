@@ -4,18 +4,18 @@
 #
 Name     : R-seriation
 Version  : 1.2.3
-Release  : 22
+Release  : 23
 URL      : https://cran.r-project.org/src/contrib/seriation_1.2-3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/seriation_1.2-3.tar.gz
 Summary  : Infrastructure for Ordering Objects Using Seriation
 Group    : Development/Tools
 License  : GPL-3.0
 Requires: R-seriation-lib = %{version}-%{release}
-Requires: R-foreach
-Requires: R-iterators
+Requires: R-bitops
 BuildRequires : R-DEoptimR
 BuildRequires : R-Rcpp
 BuildRequires : R-TSP
+BuildRequires : R-bitops
 BuildRequires : R-caTools
 BuildRequires : R-colorspace
 BuildRequires : R-dendextend
@@ -69,10 +69,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1556468107
+export SOURCE_DATE_EPOCH=1556482166
 
 %install
-export SOURCE_DATE_EPOCH=1556468107
+export SOURCE_DATE_EPOCH=1556482166
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "

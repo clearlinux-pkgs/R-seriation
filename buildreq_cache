@@ -2,6 +2,7 @@
 R-DEoptimR
 R-Rcpp
 R-TSP
+R-bitops
 R-caTools
 R-colorspace
 R-dendextend
