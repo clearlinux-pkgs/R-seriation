@@ -4,13 +4,14 @@
 #
 Name     : R-seriation
 Version  : 1.2.7
-Release  : 26
+Release  : 27
 URL      : https://cran.r-project.org/src/contrib/seriation_1.2-7.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/seriation_1.2-7.tar.gz
 Summary  : Infrastructure for Ordering Objects Using Seriation
 Group    : Development/Tools
 License  : GPL-3.0
 Requires: R-seriation-lib = %{version}-%{release}
+Requires: R-Rcpp
 Requires: R-TSP
 Requires: R-bitops
 Requires: R-caTools
@@ -20,10 +21,17 @@ Requires: R-gclus
 Requires: R-gdata
 Requires: R-ggplot2
 Requires: R-gplots
+Requires: R-gtable
 Requires: R-gtools
+Requires: R-lazyeval
+Requires: R-munsell
+Requires: R-plyr
 Requires: R-qap
 Requires: R-registry
+Requires: R-scales
+Requires: R-tibble
 Requires: R-viridis
+BuildRequires : R-Rcpp
 BuildRequires : R-TSP
 BuildRequires : R-bitops
 BuildRequires : R-caTools
@@ -33,18 +41,23 @@ BuildRequires : R-gclus
 BuildRequires : R-gdata
 BuildRequires : R-ggplot2
 BuildRequires : R-gplots
+BuildRequires : R-gtable
 BuildRequires : R-gtools
+BuildRequires : R-lazyeval
+BuildRequires : R-munsell
+BuildRequires : R-plyr
 BuildRequires : R-qap
 BuildRequires : R-registry
+BuildRequires : R-scales
+BuildRequires : R-tibble
 BuildRequires : R-viridis
 BuildRequires : buildreq-R
 
 %description
-# seriation - Infrastructure for Ordering Objects Using Seriation - R package
-[![CRAN version](http://www.r-pkg.org/badges/version/seriation)](https://cran.r-project.org/package=seriation)
-[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/seriation)](https://cran.r-project.org/package=seriation)
-[![Travis-CI Build Status](https://travis-ci.org/mhahsler/seriation.svg?branch=master)](https://travis-ci.org/mhahsler/seriation)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/mhahsler/seriation?branch=master&svg=true)](https://ci.appveyor.com/project/mhahsler/seriation)
+seriation/sequencing/ordination techniques to reorder matrices, dissimilarity
+    matrices, and dendrograms. Also provides (optimally) reordered heatmaps,
+    color images and clustering visualizations like dissimilarity plots, and
+    visual assessment of cluster tendency plots (VAT and iVAT).
 
 %package lib
 Summary: lib components for the R-seriation package.
@@ -61,13 +74,13 @@ lib components for the R-seriation package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1560017185
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1562085757
 
 %install
-export SOURCE_DATE_EPOCH=1560017185
+export SOURCE_DATE_EPOCH=1562085757
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -96,7 +109,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
