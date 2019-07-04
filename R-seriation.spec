@@ -4,53 +4,27 @@
 #
 Name     : R-seriation
 Version  : 1.2.7
-Release  : 27
+Release  : 28
 URL      : https://cran.r-project.org/src/contrib/seriation_1.2-7.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/seriation_1.2-7.tar.gz
 Summary  : Infrastructure for Ordering Objects Using Seriation
 Group    : Development/Tools
 License  : GPL-3.0
 Requires: R-seriation-lib = %{version}-%{release}
-Requires: R-Rcpp
 Requires: R-TSP
-Requires: R-bitops
-Requires: R-caTools
 Requires: R-colorspace
 Requires: R-dendextend
 Requires: R-gclus
-Requires: R-gdata
-Requires: R-ggplot2
 Requires: R-gplots
-Requires: R-gtable
-Requires: R-gtools
-Requires: R-lazyeval
-Requires: R-munsell
-Requires: R-plyr
 Requires: R-qap
 Requires: R-registry
-Requires: R-scales
-Requires: R-tibble
-Requires: R-viridis
-BuildRequires : R-Rcpp
 BuildRequires : R-TSP
-BuildRequires : R-bitops
-BuildRequires : R-caTools
 BuildRequires : R-colorspace
 BuildRequires : R-dendextend
 BuildRequires : R-gclus
-BuildRequires : R-gdata
-BuildRequires : R-ggplot2
 BuildRequires : R-gplots
-BuildRequires : R-gtable
-BuildRequires : R-gtools
-BuildRequires : R-lazyeval
-BuildRequires : R-munsell
-BuildRequires : R-plyr
 BuildRequires : R-qap
 BuildRequires : R-registry
-BuildRequires : R-scales
-BuildRequires : R-tibble
-BuildRequires : R-viridis
 BuildRequires : buildreq-R
 
 %description
@@ -75,10 +49,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1562085757
+export SOURCE_DATE_EPOCH=1562213217
 
 %install
-export SOURCE_DATE_EPOCH=1562085757
+export SOURCE_DATE_EPOCH=1562213217
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
