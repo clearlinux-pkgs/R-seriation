@@ -4,7 +4,7 @@
 #
 Name     : R-seriation
 Version  : 1.2.8
-Release  : 33
+Release  : 34
 URL      : https://cran.r-project.org/src/contrib/seriation_1.2-8.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/seriation_1.2-8.tar.gz
 Summary  : Infrastructure for Ordering Objects Using Seriation
@@ -28,11 +28,10 @@ BuildRequires : R-registry
 BuildRequires : buildreq-R
 
 %description
-# seriation - Infrastructure for Ordering Objects Using Seriation - R package
-[![CRAN version](http://www.r-pkg.org/badges/version/seriation)](https://cran.r-project.org/package=seriation)
-[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/seriation)](https://cran.r-project.org/package=seriation)
-[![Travis-CI Build Status](https://travis-ci.org/mhahsler/seriation.svg?branch=master)](https://travis-ci.org/mhahsler/seriation)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/mhahsler/seriation?branch=master&svg=true)](https://ci.appveyor.com/project/mhahsler/seriation)
+seriation/sequencing/ordination techniques to reorder matrices, dissimilarity
+    matrices, and dendrograms. Also provides (optimally) reordered heatmaps,
+    color images and clustering visualizations like dissimilarity plots, and
+    visual assessment of cluster tendency plots (VAT and iVAT).
 
 %package lib
 Summary: lib components for the R-seriation package.
@@ -44,21 +43,22 @@ lib components for the R-seriation package.
 
 %prep
 %setup -q -c -n seriation
+cd %{_builddir}/seriation
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1567011108
+export SOURCE_DATE_EPOCH=1589788273
 
 %install
-export SOURCE_DATE_EPOCH=1567011108
+export SOURCE_DATE_EPOCH=1589788273
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
