@@ -4,7 +4,7 @@
 #
 Name     : R-seriation
 Version  : 1.4.2
-Release  : 63
+Release  : 64
 URL      : https://cran.r-project.org/src/contrib/seriation_1.4.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/seriation_1.4.2.tar.gz
 Summary  : Infrastructure for Ordering Objects Using Seriation
@@ -25,9 +25,6 @@ BuildRequires : R-gclus
 BuildRequires : R-qap
 BuildRequires : R-registry
 BuildRequires : buildreq-R
-# Suppress stripping binaries
-%define __strip /bin/true
-%define debug_package %{nil}
 
 %description
 seriation/sequencing/ordination techniques to reorder matrices, dissimilarity
@@ -51,10 +48,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1678291155
+export SOURCE_DATE_EPOCH=1678833207
 
 %install
-export SOURCE_DATE_EPOCH=1678291155
+export SOURCE_DATE_EPOCH=1678833207
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
