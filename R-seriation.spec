@@ -4,10 +4,10 @@
 # Using build pattern: R
 #
 Name     : R-seriation
-Version  : 1.5.0
-Release  : 68
-URL      : https://cran.r-project.org/src/contrib/seriation_1.5.0.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/seriation_1.5.0.tar.gz
+Version  : 1.5.1
+Release  : 69
+URL      : https://cran.r-project.org/src/contrib/seriation_1.5.1.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/seriation_1.5.1.tar.gz
 Summary  : Infrastructure for Ordering Objects Using Seriation
 Group    : Development/Tools
 License  : GPL-3.0
@@ -55,10 +55,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1689871292
+export SOURCE_DATE_EPOCH=1689954649
 
 %install
-export SOURCE_DATE_EPOCH=1689871292
+export SOURCE_DATE_EPOCH=1689954649
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
