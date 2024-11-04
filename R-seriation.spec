@@ -7,7 +7,7 @@
 #
 Name     : R-seriation
 Version  : 1.5.6
-Release  : 76
+Release  : 77
 URL      : https://cran.r-project.org/src/contrib/seriation_1.5.6.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/seriation_1.5.6.tar.gz
 Summary  : Infrastructure for Ordering Objects Using Seriation
